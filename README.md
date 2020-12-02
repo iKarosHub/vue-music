@@ -1,5 +1,7 @@
 # vue-music
 
+## API 来自 [NeteaseCloudMusicApi](https://neteasecloudmusicapi.vercel.app/#/?id=neteasecloudmusicapi)
+
 ## Project setup
 
 ```
