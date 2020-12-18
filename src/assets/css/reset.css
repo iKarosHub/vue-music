@@ -71,7 +71,7 @@ td {
   vertical-align: baseline;
   background: transparent;
   box-sizing: border-box;
-  color: #4e5259;
+  color: #373737;
 }
 body {
   line-height: 1;
@@ -119,5 +119,6 @@ html,
 body,
 #app {
   height: 100%;
-  font-size: 100px;
+  background: url(../img/win-bg.png) no-repeat;
+  background-size: cover;
 }

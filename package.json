@@ -10,8 +10,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.14.1",
     "fastclick": "^1.0.6",
-    "mint-ui": "^2.2.13",
     "swiper": "^6.3.5",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
