@@ -11,7 +11,6 @@
     <audio
       ref="player"
       :src="songUrl"
-      controls
       preload="true"
       @canplay="startPlay"
       @ended="ended"
@@ -65,15 +64,17 @@ export default {
     }
   },
   methods: {
-    // 获取链接后准备播放
+    // 获取链接后准备播放时，获取缓存中已有的信息
     startPlay() {
       let player = this.$refs.player
       // 保存歌曲时间
       this.$store.commit('setSongDuration', player.duration)
-      // 开始播放
-      player.play()
-      // 播放状态
-      this.$store.commit('setPlayState', true)
+      this.$store.commit('setChangeTime', this.curTime)
+      // console.log('curTime:', this.curTime)
+      // 如果播放状态为播放，则播放音乐
+      if (this.playState) {
+        player.play()
+      }
     },
     // 播放完成之后触发
     ended() {
@@ -93,9 +94,6 @@ export default {
     // 音乐播放时记录音乐的播放位置
     timeUpdate() {
       this.$store.commit('setCurTime', this.$refs.player.currentTime)
-    },
-    playMusic() {
-      this.isPause = !this.isPause
     }
   }
 }

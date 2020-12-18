@@ -34,7 +34,6 @@ export default {
   mixins: [mixin],
   data() {
     return {
-      isPause: false,
       nowTime: '00:00', //当前播放进度时间
       songTime: '00:00', //当前歌曲总时间
       curLength: 0, //当前播放位置(0-100)
@@ -73,7 +72,6 @@ export default {
   methods: {
     // 控制音乐播放、暂停
     togglePlay() {
-      this.isPause = !this.isPause
       if (this.playState) {
         this.$store.commit('setPlayState', false)
       } else {
@@ -118,8 +116,8 @@ export default {
     changeTime(val) {
       let newCurTime = parseInt(val * 0.01 * this.songDuration)
       this.$store.commit('setChangeTime', newCurTime)
-      // console.log(val)
-      // console.log(newCurTime)
+      // console.log('val', val)
+      // console.log('newCurTime', newCurTime)
     },
     // 展示歌曲播放列表
     showPLView() {

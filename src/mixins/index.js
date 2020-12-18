@@ -67,6 +67,10 @@ export const mixin = {
       this.getSongUrl(id)
       // 音乐详细信息
       this.getSongDetail(id)
+    },
+    // 点击下载音乐, url: 音乐地址
+    downloadSong(url) {
+      
     }
   }
 }

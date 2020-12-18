@@ -40,9 +40,11 @@ const song = {
       return songId
     },
     playState: state => {
+      console.log('state.playState:', state.playState)
       let playState = state.playState
       if (!playState) {
         playState = JSON.parse(window.sessionStorage.getItem('playState') || null)
+        console.log('playState:', state.playState)
       }
       return playState
     },
